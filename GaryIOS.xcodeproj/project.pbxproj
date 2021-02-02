@@ -20,6 +20,8 @@
 		FF6891B925C86E6900037C4E /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6891B825C86E6900037C4E /* CustomTextField.swift */; };
 		FF6891BF25C91B2E00037C4E /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6891BE25C91B2E00037C4E /* SignInViewController.swift */; };
 		FF6891C425C91C7B00037C4E /* PermissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6891C325C91C7B00037C4E /* PermissionViewController.swift */; };
+		FFD8191F25C97F2200D9ECD3 /* PWSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD8191E25C97F2200D9ECD3 /* PWSearchViewController.swift */; };
+		FFD8192225C97F3700D9ECD3 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD8192125C97F3700D9ECD3 /* SignUpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		FF6891B825C86E6900037C4E /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		FF6891BE25C91B2E00037C4E /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		FF6891C325C91C7B00037C4E /* PermissionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionViewController.swift; sourceTree = "<group>"; };
+		FFD8191E25C97F2200D9ECD3 /* PWSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PWSearchViewController.swift; sourceTree = "<group>"; };
+		FFD8192125C97F3700D9ECD3 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +181,8 @@
 			isa = PBXGroup;
 			children = (
 				FF6891BE25C91B2E00037C4E /* SignInViewController.swift */,
+				FFD8191E25C97F2200D9ECD3 /* PWSearchViewController.swift */,
+				FFD8192125C97F3700D9ECD3 /* SignUpViewController.swift */,
 			);
 			path = Sign;
 			sourceTree = "<group>";
@@ -308,7 +314,9 @@
 				FF6891C425C91C7B00037C4E /* PermissionViewController.swift in Sources */,
 				FF68917425C8671B00037C4E /* AppDelegate.swift in Sources */,
 				FF68917625C8671B00037C4E /* SceneDelegate.swift in Sources */,
+				FFD8192225C97F3700D9ECD3 /* SignUpViewController.swift in Sources */,
 				FF6891B925C86E6900037C4E /* CustomTextField.swift in Sources */,
+				FFD8191F25C97F2200D9ECD3 /* PWSearchViewController.swift in Sources */,
 				FF68919A25C867B100037C4E /* CustomButton.swift in Sources */,
 				FF6891B125C8692A00037C4E /* MainViewController.swift in Sources */,
 				FF6891B525C86E2200037C4E /* Permission.swift in Sources */,

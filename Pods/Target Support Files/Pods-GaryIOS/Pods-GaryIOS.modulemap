@@ -1,0 +1,6 @@
+framework module Pods_GaryIOS {
+  umbrella header "Pods-GaryIOS-umbrella.h"
+
+  export *
+  module * { export * }
+}

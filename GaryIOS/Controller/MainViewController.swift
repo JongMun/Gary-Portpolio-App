@@ -33,10 +33,6 @@ class MainViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        print("Camera : \(CameraPermission().allowed)")
-        print("Audio : \(AudioPermission().allowed)")
-        print("Photo : \(PhotosPermission().allowed)")
-        
         if CameraPermission().allowed && AudioPermission().allowed && PhotosPermission().allowed {
             self.btn2.isEnabled = true
             self.btn3.isEnabled = true

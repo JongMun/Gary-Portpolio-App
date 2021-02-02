@@ -36,6 +36,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="0C5-Em-CLG"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" name="Farah" family="Farah" pointSize="18"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
                                             <segue destination="c4z-Or-jP3" kind="show" id="Zgf-ef-Fmf"/>
@@ -46,6 +47,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="1Lk-gc-yf3"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" name="Farah" family="Farah" pointSize="18"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
                                             <segue destination="k2v-Y5-ZyX" kind="show" id="83Q-Ey-zKD"/>
@@ -56,6 +58,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="zbV-Bk-gE4"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" name="Farah" family="Farah" pointSize="18"/>
                                         <state key="normal" title="Button"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kDU-7t-23B" customClass="CustomButton" customModule="GaryIOS" customModuleProvider="target">
@@ -63,6 +66,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="kXW-4a-82h"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" name="Farah" family="Farah" pointSize="18"/>
                                         <state key="normal" title="Button"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ktV-x6-VyG" customClass="CustomButton" customModule="GaryIOS" customModuleProvider="target">
@@ -70,6 +74,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Oo5-v0-dme"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" name="Farah" family="Farah" pointSize="18"/>
                                         <state key="normal" title="Button"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MuD-ZC-XUC" customClass="CustomButton" customModule="GaryIOS" customModuleProvider="target">
@@ -77,6 +82,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="ixk-2Y-UDc"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" name="Farah" family="Farah" pointSize="18"/>
                                         <state key="normal" title="Button"/>
                                     </button>
                                 </subviews>
@@ -246,7 +252,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="8al-wT-i4K"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="Farah" family="Farah" pointSize="18"/>
                                 <state key="normal" title="완료"/>
                                 <connections>
                                     <action selector="completePermission:" destination="c4z-Or-jP3" eventType="touchUpInside" id="mXS-TJ-5SZ"/>
@@ -284,14 +290,176 @@
                     <view key="view" contentMode="scaleToFill" id="aBF-bS-cSP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AOw-Ji-8zz" customClass="CustomTextField" customModule="GaryIOS" customModuleProvider="target">
+                                <rect key="frame" x="50" y="144" width="314" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="nNi-cR-AZw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MXY-QE-UpU" customClass="CustomTextField" customModule="GaryIOS" customModuleProvider="target">
+                                <rect key="frame" x="50" y="224" width="314" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="zwc-8g-nCg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iSE-1a-uZb">
+                                <rect key="frame" x="50" y="284" width="314" height="30"/>
+                                <state key="normal" title="forgot password?"/>
+                                <connections>
+                                    <action selector="passwdSearchAction:" destination="k2v-Y5-ZyX" eventType="touchUpInside" id="yu4-QQ-xLx"/>
+                                    <segue destination="Zsz-4c-eWM" kind="show" id="mAh-KJ-1Tu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="keo-Rb-m05" customClass="CustomButton" customModule="GaryIOS" customModuleProvider="target">
+                                <rect key="frame" x="50" y="364" width="314" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="aXY-B4-8cF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Farah" family="Farah" pointSize="18"/>
+                                <state key="normal" title="Sign In"/>
+                                <connections>
+                                    <action selector="signinAction:" destination="k2v-Y5-ZyX" eventType="touchUpInside" id="4U5-rL-gsP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fQy-Pt-BXS" customClass="CustomButton" customModule="GaryIOS" customModuleProvider="target">
+                                <rect key="frame" x="50" y="444" width="314" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Bbp-Ky-9m3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Farah" family="Farah" pointSize="18"/>
+                                <state key="normal" title="Sign Up"/>
+                                <connections>
+                                    <action selector="signupAction:" destination="k2v-Y5-ZyX" eventType="touchUpInside" id="uCq-2b-dCv"/>
+                                    <segue destination="bwc-WN-mer" kind="show" id="TQx-08-o8h"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LIK-eN-98Q" customClass="CustomButton" customModule="GaryIOS" customModuleProvider="target">
+                                <rect key="frame" x="50" y="524" width="314" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="bKu-Ah-gpl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Farah" family="Farah" pointSize="18"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="backAction:" destination="k2v-Y5-ZyX" eventType="touchUpInside" id="gMN-YU-zsj"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="dpN-WC-6oV"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="dpN-WC-6oV" firstAttribute="trailing" secondItem="AOw-Ji-8zz" secondAttribute="trailing" constant="50" id="2iT-Z9-pAu"/>
+                            <constraint firstItem="keo-Rb-m05" firstAttribute="leading" secondItem="dpN-WC-6oV" secondAttribute="leading" constant="50" id="3FV-qQ-U68"/>
+                            <constraint firstItem="keo-Rb-m05" firstAttribute="top" secondItem="iSE-1a-uZb" secondAttribute="bottom" constant="50" id="Crl-t4-oSF"/>
+                            <constraint firstItem="LIK-eN-98Q" firstAttribute="leading" secondItem="dpN-WC-6oV" secondAttribute="leading" constant="50" id="Dxo-Hk-ptD"/>
+                            <constraint firstItem="dpN-WC-6oV" firstAttribute="trailing" secondItem="LIK-eN-98Q" secondAttribute="trailing" constant="50" id="NvB-WJ-bBa"/>
+                            <constraint firstItem="fQy-Pt-BXS" firstAttribute="top" secondItem="keo-Rb-m05" secondAttribute="bottom" constant="30" id="S6j-5H-Vnk"/>
+                            <constraint firstItem="iSE-1a-uZb" firstAttribute="leading" secondItem="dpN-WC-6oV" secondAttribute="leading" constant="50" id="VPe-ty-K5E"/>
+                            <constraint firstItem="dpN-WC-6oV" firstAttribute="trailing" secondItem="MXY-QE-UpU" secondAttribute="trailing" constant="50" id="WIo-pT-hTV"/>
+                            <constraint firstItem="AOw-Ji-8zz" firstAttribute="leading" secondItem="dpN-WC-6oV" secondAttribute="leading" constant="50" id="Wq2-nZ-Y0f"/>
+                            <constraint firstItem="dpN-WC-6oV" firstAttribute="trailing" secondItem="fQy-Pt-BXS" secondAttribute="trailing" constant="50" id="YsY-5z-yqL"/>
+                            <constraint firstItem="MXY-QE-UpU" firstAttribute="top" secondItem="AOw-Ji-8zz" secondAttribute="bottom" constant="30" id="d4z-3N-6uP"/>
+                            <constraint firstItem="dpN-WC-6oV" firstAttribute="trailing" secondItem="keo-Rb-m05" secondAttribute="trailing" constant="50" id="djg-1e-ZJe"/>
+                            <constraint firstItem="MXY-QE-UpU" firstAttribute="leading" secondItem="dpN-WC-6oV" secondAttribute="leading" constant="50" id="fYO-Yr-HTO"/>
+                            <constraint firstItem="dpN-WC-6oV" firstAttribute="trailing" secondItem="iSE-1a-uZb" secondAttribute="trailing" constant="50" id="jyW-rP-Ibk"/>
+                            <constraint firstItem="AOw-Ji-8zz" firstAttribute="top" secondItem="dpN-WC-6oV" secondAttribute="top" constant="100" id="m62-8k-zvl"/>
+                            <constraint firstItem="fQy-Pt-BXS" firstAttribute="leading" secondItem="dpN-WC-6oV" secondAttribute="leading" constant="50" id="wpT-jV-yRL"/>
+                            <constraint firstItem="LIK-eN-98Q" firstAttribute="top" secondItem="fQy-Pt-BXS" secondAttribute="bottom" constant="30" id="zEm-Nl-AWr"/>
+                            <constraint firstItem="iSE-1a-uZb" firstAttribute="top" secondItem="MXY-QE-UpU" secondAttribute="bottom" constant="10" id="zbT-gT-Lqp"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="kC0-Wf-faL"/>
+                    <connections>
+                        <outlet property="emailField" destination="AOw-Ji-8zz" id="XSy-am-egK"/>
+                        <outlet property="passwdField" destination="MXY-QE-UpU" id="eOk-eA-Lrl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RMe-kc-z0q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="628" y="393"/>
+        </scene>
+        <!--Search View Controller-->
+        <scene sceneID="K9g-Rj-Ltf">
+            <objects>
+                <viewController id="Zsz-4c-eWM" customClass="PWSearchViewController" customModule="GaryIOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iMn-u8-QV2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="zp5-EJ-SiP"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="tFy-1H-YlP"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bL8-vd-e4c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1422" y="764"/>
+        </scene>
+        <!--Sign Up View Controller-->
+        <scene sceneID="GCo-u0-Bti">
+            <objects>
+                <viewController id="bwc-WN-mer" customClass="SignUpViewController" customModule="GaryIOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jVu-gw-dsx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="quv-ku-Aim" customClass="CustomTextField" customModule="GaryIOS" customModuleProvider="target">
+                                <rect key="frame" x="50" y="100" width="314" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="9s3-S2-xtP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zmM-sg-Oht" customClass="CustomTextField" customModule="GaryIOS" customModuleProvider="target">
+                                <rect key="frame" x="50" y="180" width="314" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="cZn-ZB-ftm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kDa-Iz-fRP" customClass="CustomButton" customModule="GaryIOS" customModuleProvider="target">
+                                <rect key="frame" x="50" y="280" width="314" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="1uY-wK-Pip"/>
+                                </constraints>
+                                <state key="normal" title="Complete"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uyp-CV-Apk" customClass="CustomButton" customModule="GaryIOS" customModuleProvider="target">
+                                <rect key="frame" x="50" y="360" width="314" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Wd8-gX-Z9q"/>
+                                </constraints>
+                                <state key="normal" title="Cancel"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Lu6-bK-6zc"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="zmM-sg-Oht" firstAttribute="leading" secondItem="Lu6-bK-6zc" secondAttribute="leading" constant="50" id="1xE-xn-1IJ"/>
+                            <constraint firstItem="kDa-Iz-fRP" firstAttribute="leading" secondItem="Lu6-bK-6zc" secondAttribute="leading" constant="50" id="2vU-x9-1Op"/>
+                            <constraint firstItem="Lu6-bK-6zc" firstAttribute="trailing" secondItem="zmM-sg-Oht" secondAttribute="trailing" constant="50" id="7NN-lg-UhQ"/>
+                            <constraint firstItem="uyp-CV-Apk" firstAttribute="top" secondItem="kDa-Iz-fRP" secondAttribute="bottom" constant="30" id="9YA-yh-aKc"/>
+                            <constraint firstItem="Lu6-bK-6zc" firstAttribute="trailing" secondItem="kDa-Iz-fRP" secondAttribute="trailing" constant="50" id="C0I-2G-jVf"/>
+                            <constraint firstItem="uyp-CV-Apk" firstAttribute="leading" secondItem="Lu6-bK-6zc" secondAttribute="leading" constant="50" id="FXG-1Z-8jg"/>
+                            <constraint firstItem="zmM-sg-Oht" firstAttribute="top" secondItem="quv-ku-Aim" secondAttribute="bottom" constant="30" id="IyX-cw-ycU"/>
+                            <constraint firstItem="quv-ku-Aim" firstAttribute="leading" secondItem="Lu6-bK-6zc" secondAttribute="leading" constant="50" id="axo-vj-MrZ"/>
+                            <constraint firstItem="quv-ku-Aim" firstAttribute="top" secondItem="Lu6-bK-6zc" secondAttribute="top" constant="100" id="buW-7S-iau"/>
+                            <constraint firstItem="Lu6-bK-6zc" firstAttribute="trailing" secondItem="uyp-CV-Apk" secondAttribute="trailing" constant="50" id="lP4-fZ-aAK"/>
+                            <constraint firstItem="Lu6-bK-6zc" firstAttribute="trailing" secondItem="quv-ku-Aim" secondAttribute="trailing" constant="50" id="wdn-hk-Wu6"/>
+                            <constraint firstItem="kDa-Iz-fRP" firstAttribute="top" secondItem="zmM-sg-Oht" secondAttribute="bottom" constant="50" id="yyL-Ox-hFH"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="cbu-ep-oky"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KUJ-YB-4TL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1422" y="88"/>
         </scene>
     </scenes>
     <resources>
