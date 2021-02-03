@@ -22,6 +22,9 @@
 		FF6891C425C91C7B00037C4E /* PermissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6891C325C91C7B00037C4E /* PermissionViewController.swift */; };
 		FFD8191F25C97F2200D9ECD3 /* PWSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD8191E25C97F2200D9ECD3 /* PWSearchViewController.swift */; };
 		FFD8192225C97F3700D9ECD3 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD8192125C97F3700D9ECD3 /* SignUpViewController.swift */; };
+		FFD8193325CA498000D9ECD3 /* ToastMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD8193225CA498000D9ECD3 /* ToastMessage.swift */; };
+		FFD8195525CA886D00D9ECD3 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD8195425CA886D00D9ECD3 /* CameraViewController.swift */; };
+		FFD8195825CA888000D9ECD3 /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD8195725CA888000D9ECD3 /* CameraController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +47,9 @@
 		FF6891C325C91C7B00037C4E /* PermissionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionViewController.swift; sourceTree = "<group>"; };
 		FFD8191E25C97F2200D9ECD3 /* PWSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PWSearchViewController.swift; sourceTree = "<group>"; };
 		FFD8192125C97F3700D9ECD3 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		FFD8193225CA498000D9ECD3 /* ToastMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastMessage.swift; sourceTree = "<group>"; };
+		FFD8195425CA886D00D9ECD3 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		FFD8195725CA888000D9ECD3 /* CameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +131,7 @@
 			children = (
 				FF6891C225C91C6900037C4E /* Permission */,
 				FF6891BD25C91B1B00037C4E /* Sign */,
+				FFD8195325CA885500D9ECD3 /* Camera */,
 				FF6891B025C8692A00037C4E /* MainViewController.swift */,
 			);
 			path = Controller;
@@ -165,6 +172,7 @@
 			children = (
 				FF68919925C867B100037C4E /* CustomButton.swift */,
 				FF6891B825C86E6900037C4E /* CustomTextField.swift */,
+				FFD8193225CA498000D9ECD3 /* ToastMessage.swift */,
 			);
 			path = UserInterface;
 			sourceTree = "<group>";
@@ -181,8 +189,8 @@
 			isa = PBXGroup;
 			children = (
 				FF6891BE25C91B2E00037C4E /* SignInViewController.swift */,
-				FFD8191E25C97F2200D9ECD3 /* PWSearchViewController.swift */,
 				FFD8192125C97F3700D9ECD3 /* SignUpViewController.swift */,
+				FFD8191E25C97F2200D9ECD3 /* PWSearchViewController.swift */,
 			);
 			path = Sign;
 			sourceTree = "<group>";
@@ -193,6 +201,15 @@
 				FF6891C325C91C7B00037C4E /* PermissionViewController.swift */,
 			);
 			path = Permission;
+			sourceTree = "<group>";
+		};
+		FFD8195325CA885500D9ECD3 /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				FFD8195425CA886D00D9ECD3 /* CameraViewController.swift */,
+				FFD8195725CA888000D9ECD3 /* CameraController.swift */,
+			);
+			path = Camera;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -313,12 +330,15 @@
 				FF6891BF25C91B2E00037C4E /* SignInViewController.swift in Sources */,
 				FF6891C425C91C7B00037C4E /* PermissionViewController.swift in Sources */,
 				FF68917425C8671B00037C4E /* AppDelegate.swift in Sources */,
+				FFD8193325CA498000D9ECD3 /* ToastMessage.swift in Sources */,
 				FF68917625C8671B00037C4E /* SceneDelegate.swift in Sources */,
+				FFD8195525CA886D00D9ECD3 /* CameraViewController.swift in Sources */,
 				FFD8192225C97F3700D9ECD3 /* SignUpViewController.swift in Sources */,
 				FF6891B925C86E6900037C4E /* CustomTextField.swift in Sources */,
 				FFD8191F25C97F2200D9ECD3 /* PWSearchViewController.swift in Sources */,
 				FF68919A25C867B100037C4E /* CustomButton.swift in Sources */,
 				FF6891B125C8692A00037C4E /* MainViewController.swift in Sources */,
+				FFD8195825CA888000D9ECD3 /* CameraController.swift in Sources */,
 				FF6891B525C86E2200037C4E /* Permission.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -467,6 +487,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TQ3U3269X7;
 				INFOPLIST_FILE = GaryIOS/Info.plist;
@@ -476,6 +497,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.jeong.GaryIOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -487,6 +509,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TQ3U3269X7;
 				INFOPLIST_FILE = GaryIOS/Info.plist;
@@ -496,6 +519,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.jeong.GaryIOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

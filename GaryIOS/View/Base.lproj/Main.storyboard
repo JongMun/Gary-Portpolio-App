@@ -36,7 +36,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="0C5-Em-CLG"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Farah" family="Farah" pointSize="18"/>
+                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
                                             <segue destination="c4z-Or-jP3" kind="show" id="Zgf-ef-Fmf"/>
@@ -47,7 +47,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="1Lk-gc-yf3"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Farah" family="Farah" pointSize="18"/>
+                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
                                             <segue destination="k2v-Y5-ZyX" kind="show" id="83Q-Ey-zKD"/>
@@ -58,7 +58,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="zbV-Bk-gE4"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Farah" family="Farah" pointSize="18"/>
+                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
                                         <state key="normal" title="Button"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kDU-7t-23B" customClass="CustomButton" customModule="GaryIOS" customModuleProvider="target">
@@ -66,7 +66,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="kXW-4a-82h"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Farah" family="Farah" pointSize="18"/>
+                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
                                         <state key="normal" title="Button"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ktV-x6-VyG" customClass="CustomButton" customModule="GaryIOS" customModuleProvider="target">
@@ -74,7 +74,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Oo5-v0-dme"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Farah" family="Farah" pointSize="18"/>
+                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
                                         <state key="normal" title="Button"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MuD-ZC-XUC" customClass="CustomButton" customModule="GaryIOS" customModuleProvider="target">
@@ -82,7 +82,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="ixk-2Y-UDc"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Farah" family="Farah" pointSize="18"/>
+                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
                                         <state key="normal" title="Button"/>
                                     </button>
                                 </subviews>
@@ -147,7 +147,7 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="권한을 모두 동의하여야 원활한 서비스가 제공됩니다." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ow-An-A2P">
                                                 <rect key="frame" x="0.0" y="20" width="374" height="110"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="25"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -167,9 +167,9 @@
                                                     <constraint firstAttribute="width" secondItem="Ehi-dK-e3T" secondAttribute="height" multiplier="1:1" id="Tu0-oY-po2"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="카메라 권한" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rOr-Th-78e">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Camera" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rOr-Th-78e">
                                                 <rect key="frame" x="160" y="20" width="164" height="60"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="22"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -195,9 +195,9 @@
                                                     <constraint firstAttribute="width" secondItem="fSS-II-803" secondAttribute="height" multiplier="1:1" id="Pcx-3Y-FeE"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="마이크 권한" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdJ-mL-wI9">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Record" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdJ-mL-wI9">
                                                 <rect key="frame" x="160" y="20" width="164" height="60"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="22"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -223,9 +223,9 @@
                                                     <constraint firstAttribute="width" secondItem="MMn-CI-99L" secondAttribute="height" multiplier="1:1" id="AX4-3O-cd1"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="사진첩 권한" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rsm-Lt-3yJ">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Photos" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rsm-Lt-3yJ">
                                                 <rect key="frame" x="160" y="20" width="164" height="60"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="22"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -252,8 +252,8 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="8al-wT-i4K"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Farah" family="Farah" pointSize="18"/>
-                                <state key="normal" title="완료"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
+                                <state key="normal" title="Check"/>
                                 <connections>
                                     <action selector="completePermission:" destination="c4z-Or-jP3" eventType="touchUpInside" id="mXS-TJ-5SZ"/>
                                 </connections>
@@ -291,24 +291,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AOw-Ji-8zz" customClass="CustomTextField" customModule="GaryIOS" customModuleProvider="target">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AOw-Ji-8zz" customClass="CustomTextFieldforEmail" customModule="GaryIOS" customModuleProvider="target">
                                 <rect key="frame" x="50" y="144" width="314" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="nNi-cR-AZw"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MXY-QE-UpU" customClass="CustomTextField" customModule="GaryIOS" customModuleProvider="target">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MXY-QE-UpU" customClass="CustomTextFieldforPassword" customModule="GaryIOS" customModuleProvider="target">
                                 <rect key="frame" x="50" y="224" width="314" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="zwc-8g-nCg"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="one-time-code"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iSE-1a-uZb">
-                                <rect key="frame" x="50" y="284" width="314" height="30"/>
+                                <rect key="frame" x="50" y="284" width="314" height="33"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
                                 <state key="normal" title="forgot password?"/>
                                 <connections>
                                     <action selector="passwdSearchAction:" destination="k2v-Y5-ZyX" eventType="touchUpInside" id="yu4-QQ-xLx"/>
@@ -316,22 +317,22 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="keo-Rb-m05" customClass="CustomButton" customModule="GaryIOS" customModuleProvider="target">
-                                <rect key="frame" x="50" y="364" width="314" height="50"/>
+                                <rect key="frame" x="50" y="367" width="314" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="aXY-B4-8cF"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Farah" family="Farah" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
                                 <state key="normal" title="Sign In"/>
                                 <connections>
                                     <action selector="signinAction:" destination="k2v-Y5-ZyX" eventType="touchUpInside" id="4U5-rL-gsP"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fQy-Pt-BXS" customClass="CustomButton" customModule="GaryIOS" customModuleProvider="target">
-                                <rect key="frame" x="50" y="444" width="314" height="50"/>
+                                <rect key="frame" x="50" y="447" width="314" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Bbp-Ky-9m3"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Farah" family="Farah" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
                                 <state key="normal" title="Sign Up"/>
                                 <connections>
                                     <action selector="signupAction:" destination="k2v-Y5-ZyX" eventType="touchUpInside" id="uCq-2b-dCv"/>
@@ -339,11 +340,11 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LIK-eN-98Q" customClass="CustomButton" customModule="GaryIOS" customModuleProvider="target">
-                                <rect key="frame" x="50" y="524" width="314" height="50"/>
+                                <rect key="frame" x="50" y="527" width="314" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="bKu-Ah-gpl"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Farah" family="Farah" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
                                     <action selector="backAction:" destination="k2v-Y5-ZyX" eventType="touchUpInside" id="gMN-YU-zsj"/>
@@ -390,10 +391,81 @@
                     <view key="view" contentMode="scaleToFill" id="iMn-u8-QV2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sg9-59-6ah" customClass="CustomTextFieldforEmail" customModule="GaryIOS" customModuleProvider="target">
+                                <rect key="frame" x="50" y="106.5" width="314" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="qSy-P7-XHP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
+                                <connections>
+                                    <action selector="emailCheck:" destination="Zsz-4c-eWM" eventType="editingDidEnd" id="fB5-GZ-CxV"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2tV-NV-6YP">
+                                <rect key="frame" x="50" y="166.5" width="314" height="0.0"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E4e-uV-vva" customClass="CustomButton" customModule="GaryIOS" customModuleProvider="target">
+                                <rect key="frame" x="50" y="216.5" width="314" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="4uv-QM-u2H"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
+                                <state key="normal" title="Sending"/>
+                                <connections>
+                                    <action selector="updatePassword:" destination="Zsz-4c-eWM" eventType="touchUpInside" id="oEt-RU-xDK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zA5-sQ-66h" customClass="CustomButton" customModule="GaryIOS" customModuleProvider="target">
+                                <rect key="frame" x="50" y="296.5" width="314" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="WRF-3W-ct6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="backAction:" destination="Zsz-4c-eWM" eventType="touchUpInside" id="9Uc-I0-Lhm"/>
+                                    <action selector="updatePassword:" destination="Zsz-4c-eWM" eventType="touchUpInside" id="bhq-wm-RHa"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sending email for reset password" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cZc-AH-TEU">
+                                <rect key="frame" x="50" y="30" width="314" height="46.5"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="zp5-EJ-SiP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="zA5-sQ-66h" firstAttribute="leading" secondItem="zp5-EJ-SiP" secondAttribute="leading" constant="50" id="4Nv-XE-Asw"/>
+                            <constraint firstItem="E4e-uV-vva" firstAttribute="leading" secondItem="zp5-EJ-SiP" secondAttribute="leading" constant="50" id="9d0-ke-S6l"/>
+                            <constraint firstItem="2tV-NV-6YP" firstAttribute="centerX" secondItem="iMn-u8-QV2" secondAttribute="centerX" id="Ce1-eK-l5J"/>
+                            <constraint firstItem="2tV-NV-6YP" firstAttribute="top" secondItem="Sg9-59-6ah" secondAttribute="bottom" constant="10" id="DYg-Di-0v4"/>
+                            <constraint firstItem="cZc-AH-TEU" firstAttribute="leading" secondItem="zp5-EJ-SiP" secondAttribute="leading" constant="50" id="GGF-Vd-G4Z"/>
+                            <constraint firstItem="E4e-uV-vva" firstAttribute="top" secondItem="2tV-NV-6YP" secondAttribute="bottom" constant="50" id="Ie2-Ji-6n5"/>
+                            <constraint firstItem="2tV-NV-6YP" firstAttribute="leading" secondItem="zp5-EJ-SiP" secondAttribute="leading" constant="50" id="LG8-dV-K4D"/>
+                            <constraint firstItem="zp5-EJ-SiP" firstAttribute="trailing" secondItem="Sg9-59-6ah" secondAttribute="trailing" constant="50" id="QSt-YP-iwo"/>
+                            <constraint firstItem="zp5-EJ-SiP" firstAttribute="trailing" secondItem="zA5-sQ-66h" secondAttribute="trailing" constant="50" id="SZC-w0-mRl"/>
+                            <constraint firstItem="zA5-sQ-66h" firstAttribute="top" secondItem="E4e-uV-vva" secondAttribute="bottom" constant="30" id="V8e-HU-ZBz"/>
+                            <constraint firstItem="zp5-EJ-SiP" firstAttribute="trailing" secondItem="E4e-uV-vva" secondAttribute="trailing" constant="50" id="VGn-6v-i6r"/>
+                            <constraint firstItem="Sg9-59-6ah" firstAttribute="centerX" secondItem="iMn-u8-QV2" secondAttribute="centerX" id="XD4-M4-Jfu"/>
+                            <constraint firstItem="Sg9-59-6ah" firstAttribute="top" secondItem="cZc-AH-TEU" secondAttribute="bottom" constant="30" id="afQ-92-txV"/>
+                            <constraint firstAttribute="trailing" secondItem="cZc-AH-TEU" secondAttribute="trailing" constant="50" id="fLc-8V-2sh"/>
+                            <constraint firstItem="zp5-EJ-SiP" firstAttribute="trailing" secondItem="2tV-NV-6YP" secondAttribute="trailing" constant="50" id="hwq-bP-BwV"/>
+                            <constraint firstItem="cZc-AH-TEU" firstAttribute="top" secondItem="zp5-EJ-SiP" secondAttribute="top" constant="30" id="rp0-jb-x7k"/>
+                            <constraint firstItem="Sg9-59-6ah" firstAttribute="leading" secondItem="zp5-EJ-SiP" secondAttribute="leading" constant="50" id="tom-jB-6rk"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="tFy-1H-YlP"/>
+                    <connections>
+                        <outlet property="emailField" destination="Sg9-59-6ah" id="Pq9-en-J04"/>
+                        <outlet property="validationLabel" destination="2tV-NV-6YP" id="uT7-xQ-XMW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bL8-vd-e4c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -402,40 +474,48 @@
         <!--Sign Up View Controller-->
         <scene sceneID="GCo-u0-Bti">
             <objects>
-                <viewController id="bwc-WN-mer" customClass="SignUpViewController" customModule="GaryIOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="bwc-WN-mer" customClass="SignUpViewController" customModule="GaryIOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jVu-gw-dsx">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="quv-ku-Aim" customClass="CustomTextField" customModule="GaryIOS" customModuleProvider="target">
-                                <rect key="frame" x="50" y="100" width="314" height="50"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="quv-ku-Aim" customClass="CustomTextFieldforEmail" customModule="GaryIOS" customModuleProvider="target">
+                                <rect key="frame" x="50" y="144" width="314" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="9s3-S2-xtP"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zmM-sg-Oht" customClass="CustomTextField" customModule="GaryIOS" customModuleProvider="target">
-                                <rect key="frame" x="50" y="180" width="314" height="50"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zmM-sg-Oht" customClass="CustomTextFieldforPassword" customModule="GaryIOS" customModuleProvider="target">
+                                <rect key="frame" x="50" y="224" width="314" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="cZn-ZB-ftm"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="one-time-code"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kDa-Iz-fRP" customClass="CustomButton" customModule="GaryIOS" customModuleProvider="target">
-                                <rect key="frame" x="50" y="280" width="314" height="50"/>
+                                <rect key="frame" x="50" y="324" width="314" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="1uY-wK-Pip"/>
                                 </constraints>
-                                <state key="normal" title="Complete"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
+                                <state key="normal" title="Sign Up"/>
+                                <connections>
+                                    <action selector="signupCompleteAction:" destination="bwc-WN-mer" eventType="touchUpInside" id="nEo-mL-5d2"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uyp-CV-Apk" customClass="CustomButton" customModule="GaryIOS" customModuleProvider="target">
-                                <rect key="frame" x="50" y="360" width="314" height="50"/>
+                                <rect key="frame" x="50" y="404" width="314" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Wd8-gX-Z9q"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
                                 <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="backAction:" destination="bwc-WN-mer" eventType="touchUpInside" id="JgK-1n-H68"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Lu6-bK-6zc"/>
@@ -456,6 +536,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="cbu-ep-oky"/>
+                    <connections>
+                        <outlet property="emailField" destination="quv-ku-Aim" id="f8Q-4w-MQY"/>
+                        <outlet property="passwdField" destination="zmM-sg-Oht" id="iaP-wX-X0l"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KUJ-YB-4TL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -467,6 +551,9 @@
         <image name="pencil.circle" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -17,13 +17,9 @@ class PermissionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("ccccc")
         getPermission(index: .camera, self.checkBoxCamera)
         getPermission(index: .record, self.checkBoxRecord)
         getPermission(index: .photos, self.checkBoxPhotos)
-    }
-    override func viewWillAppear(_ animated: Bool) {
-        print("bbbbb")
     }
     
     @IBAction func completePermission(_ sender: UIButton) {
