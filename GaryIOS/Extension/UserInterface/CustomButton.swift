@@ -19,7 +19,7 @@ class CustomButton: UIButton {
         self.layer.cornerRadius = 5.0;
         self.layer.masksToBounds = true
         self.tintColor = UIColor.white
-        self.backgroundColor = UIColor.init(displayP3Red: 204/255, green: 102/255, blue: 240/255, alpha: 1)
+        self.backgroundColor = UIColor.MyColor.purple
         self.setTitleColor(.white, for: .normal)
         
         // Button Shadow
