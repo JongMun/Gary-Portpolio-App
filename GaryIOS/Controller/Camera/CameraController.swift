@@ -126,18 +126,17 @@ class CameraController: UIViewController {
         guard let captureSession = self.captureSession, captureSession.isRunning else {
             throw CameraControllerError.captureSessionIsMissing
         }
-                
+        
         self.previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
-        self.previewLayer?.frame.size = view.frame.size
         self.previewLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
         self.previewLayer?.connection?.videoOrientation = .portrait
         
-        print("Height: \(previewLayer?.frame.height) / Width: \(previewLayer?.frame.width) / Top: \(previewLayer?.frame.minY) / Left: \(previewLayer?.frame.minX)")
-
-//        view.layer.insertSublayer(self.previewLayer!, at: 0)
-        view.layer.addSublayer(self.previewLayer!)
+        view.layer.insertSublayer(self.previewLayer!, at: 0)
         
-        self.previewLayer?.frame = view.frame
+        // 프리뷰가 Margin 100만큼 내려와 있으므로 view.frame을 하게되면 프리뷰 또한 100만큼 내려감
+        // 프리뷰 프레임의 시작 좌표는 추가되어지는 뷰의 기준으로 0,0에서 시작되게 만들어야함.
+//        self.previewLayer?.frame = view.frame
+        self.previewLayer?.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: UIScreen.main.bounds.height)
     }
     // 전면, 후면 카메라 전환 기능 구현
     func switchCameras() throws {

@@ -13,13 +13,16 @@ class CameraPreviewController: UIViewController {
     let cameraController = CameraController()
     let imageController = UIImagePickerController()
     
+    @IBOutlet fileprivate var topPanel: UIView!
+    @IBOutlet fileprivate var bottomPanel: UIView!
     @IBOutlet fileprivate var previewView: UIView!
-    @IBOutlet fileprivate var captureButton: UIButton!
-    @IBOutlet fileprivate var toggleCameraButton: UIButton!
-    @IBOutlet fileprivate var toggleFlashButton: UIButton!
-    @IBOutlet fileprivate var albumImage: UIImageView!
-    @IBOutlet fileprivate var videoModeButton: UIButton!
-    @IBOutlet fileprivate var modifyPhotoButton: UIButton!
+    @IBOutlet fileprivate var albumImage: UIImageView?
+    
+    let toggleCameraButton: CustomCameraButton = CustomCameraButton()
+    let toggleFlashButton: CustomCameraButton = CustomCameraButton()
+    let albumButton: CustomCameraButton = CustomCameraButton()
+    let filterButton: CustomCameraButton = CustomCameraButton()
+    let captureButton: CustomCameraShutterButton = CustomCameraShutterButton()
     
     override var prefersStatusBarHidden: Bool { return true }
     
@@ -27,17 +30,17 @@ class CameraPreviewController: UIViewController {
 }
 
 extension CameraPreviewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        let filter = FilterStylize.CIBlendWithAlphaMask
+        functionButtonInit()
         
         getOnePhoto()
-        styleButton()
-        styleAlbumImageView()
         configureCameraController()
         addTapGetureAction()
     }
+    
     func getOnePhoto() {
         let manager = PHImageManager.default()
         
@@ -57,24 +60,56 @@ extension CameraPreviewController {
             imageArray.reverse()
             
             DispatchQueue.main.async {
-                self.albumImage.image = self.imageArray[0]
+                self.albumButton.setBackgroundImage(self.imageArray[0], for: .normal)
             }
         } else {
             print("You got no photos!")
         }
     }
-    // 촬영 버튼 스타일링
-    func styleButton() {
-        self.toggleCameraButton.tintColor = UIColor.MyColor.purple
-        self.toggleFlashButton.tintColor = UIColor.MyColor.purple
-        self.modifyPhotoButton.tintColor = UIColor.MyColor.purple
+    
+    // 커스텀 버튼 UI 뿌리기
+    func functionButtonInit() {
+        // 카메라 토글 버튼
+        self.topPanel.addSubview(toggleCameraButton)
+        toggleCameraButton.translatesAutoresizingMaskIntoConstraints = false
+        toggleCameraButton.leftAnchor.constraint(equalTo: topPanel.leftAnchor, constant: 30).isActive = true
+        toggleCameraButton.bottomAnchor.constraint(equalTo: topPanel.bottomAnchor, constant: -30).isActive = true
+        toggleCameraButton.setBackgroundImage(UIImage(named: "rotation"), for: .normal)
+        toggleCameraButton.imageView?.contentMode = .scaleAspectFit
+        
+        // 플레시 토글 버튼
+        self.topPanel.addSubview(toggleFlashButton)
+        toggleFlashButton.translatesAutoresizingMaskIntoConstraints = false
+        toggleFlashButton.rightAnchor.constraint(equalTo: topPanel.rightAnchor, constant: -30).isActive = true
+        toggleFlashButton.bottomAnchor.constraint(equalTo: topPanel.bottomAnchor, constant: -30).isActive = true
+        toggleFlashButton.setBackgroundImage(UIImage(named: "flashon"), for: .normal)
+        toggleFlashButton.imageView?.contentMode = .scaleAspectFit
+        
+        // 사진 앨범 버튼
+        self.bottomPanel.addSubview(albumButton)
+        albumButton.translatesAutoresizingMaskIntoConstraints = false
+        albumButton.leftAnchor.constraint(equalTo: bottomPanel.leftAnchor, constant: 30).isActive = true
+        albumButton.topAnchor.constraint(equalTo: bottomPanel.topAnchor, constant: 30).isActive = true
+        albumButton.setBackgroundImage(UIImage(named: "image"), for: .normal)
+        albumButton.imageView?.contentMode = .scaleAspectFit
+        
+        // 카메라 필터 버튼
+        self.bottomPanel.addSubview(filterButton)
+        filterButton.translatesAutoresizingMaskIntoConstraints = false
+        filterButton.rightAnchor.constraint(equalTo: bottomPanel.rightAnchor, constant: -30).isActive = true
+        filterButton.topAnchor.constraint(equalTo: bottomPanel.topAnchor, constant: 30).isActive = true
+        filterButton.setBackgroundImage(UIImage(named: "filter"), for: .normal)
+        filterButton.imageView?.contentMode = .scaleAspectFit
+        
+        // 카메라 셔터 버튼
+        self.bottomPanel.addSubview(captureButton)
+        captureButton.translatesAutoresizingMaskIntoConstraints = false
+        captureButton.topAnchor.constraint(equalTo: bottomPanel.topAnchor, constant: 30).isActive = true
+        captureButton.centerXAnchor.constraint(equalTo: bottomPanel.centerXAnchor).isActive = true
+        captureButton.setBackgroundImage(UIImage(named: "shutter"), for: .normal)
+        captureButton.imageView?.contentMode = .scaleAspectFit
     }
-    // 앨범 이미지뷰 스타일링
-    func styleAlbumImageView() {
-        self.albumImage.layer.borderColor = UIColor.MyColor.purple.cgColor
-        self.albumImage.layer.borderWidth = 2
-        self.albumImage.layer.cornerRadius = min(self.albumImage.frame.width, self.albumImage.frame.height) / 2
-    }
+    
     // 카메라 기능 정의, 시작
     func configureCameraController() {
         cameraController.prepare {
@@ -85,39 +120,28 @@ extension CameraPreviewController {
             try? self.cameraController.displayPreview(on: self.previewView)
         }
     }
+    
     // 버튼 외 탭 액션 연결
     func addTapGetureAction() {
-        // 이미지뷰 탭 액션 연결
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(showLibrary(tapGestureRecognizer:)))
-        albumImage.isUserInteractionEnabled = true
-        albumImage.addGestureRecognizer(tapGestureRecognizer)
-    }
-    // 앨범 이미지 뷰 클릭 액션
-    @objc func showLibrary(tapGestureRecognizer: UITapGestureRecognizer)
-    {
-        guard let cameraView = self.storyboard?.instantiateViewController(identifier: "PhotoCollection") else {
-            return
-        }
-        self.present(cameraView, animated: true)
+        // 카메라 전환 이벤트 연결
+        toggleCameraButton.addTarget(self, action: #selector(toggleCamera), for: .touchUpInside)
+        
+        // 플래시 토글 이벤트 연결
+        toggleFlashButton.addTarget(self, action: #selector(toggleFlash), for: .touchUpInside)
+        
+        // 사진앨범 이벤트 연결
+        albumButton.addTarget(self, action: #selector(showLibrary), for: .touchUpInside)
+        
+        // 사진촬영 이벤트 연결
+        captureButton.addTarget(self, action: #selector(takePicture), for: .touchUpInside)
+        
+        // 필터적용 이벤트 연결
+        filterButton.addTarget(self, action: #selector(changeFilter), for: .touchUpInside)
+        
     }
     
-}
-
-extension CameraPreviewController {
-    // 플래시 모드 액션
-    @IBAction func toggleFlashAction(_ sender: UIButton) {
-        if cameraController.flashMode == .on {
-            cameraController.flashMode = .off
-            //            toggleFlashButton.setImage(#imageLiteral(resourceName: "Flash Off Icon"), for: .normal)
-            toggleFlashButton.setImage(UIImage(systemName: "flashlight.off.fill"), for: .normal)
-        } else {
-            cameraController.flashMode = .on
-            //            toggleFlashButton.setImage(#imageLiteral(resourceName: "Flash On Icon"), for: .normal)
-            toggleFlashButton.setImage(UIImage(systemName: "flashlight.on.fill"), for: .normal)
-        }
-    }
-    // 사용할 카메라 스위칭 액션
-    @IBAction func switchCameraAction(_ sender: UIButton) {
+    // 카메라 전환 이벤트 액션
+    @objc func toggleCamera() {
         do {
             try cameraController.switchCameras()
         } catch {
@@ -126,33 +150,54 @@ extension CameraPreviewController {
         
         switch cameraController.currentCameraPosition {
         case .some(.front):
-            //            toggleCameraButton.setImage(#imageLiteral(resourceName: "Camera Front Icon"), for: .normal)
-            toggleCameraButton.setImage(UIImage(systemName: "arrow.triangle.2.circlepath.camera.fill"), for: .normal)
-            
             cameraController.flashMode = .off
-            toggleFlashButton.setImage(UIImage(systemName: "flashlight.off.fill"), for: .normal)
         case .some(.back):
-            //            toggleCameraButton.setImage(#imageLiteral(resourceName: "Camera Back Icon"), for: .normal)
-            toggleCameraButton.setImage(UIImage(systemName: "arrow.triangle.2.circlepath.camera"), for: .normal)
+            cameraController.flashMode = .off
         case .none:
             return
         }
     }
-    // 사진 촬영 액션
-    @IBAction func captureImage(_ sender: UIButton) {
-        cameraController.captureImage(completion: {
-            (image, error) in
-            guard let image = image else {
-                print(error ?? "Image Capture Error")
-                return
-            }
-            // Photokit 사용 이미지 저장
-            try? PHPhotoLibrary.shared().performChangesAndWait {
-                PHAssetChangeRequest.creationRequestForAsset(from: image)
-                // 앨범 뷰 이미지 수시로 교체
-                self.albumImage.image = image
-            }
-        })
+    
+    // 플래시 토글 이벤트 액션
+    @objc func toggleFlash() {
+        if cameraController.flashMode == .on {
+            cameraController.flashMode = .off
+            toggleFlashButton.setBackgroundImage(UIImage(named: "flashoff"), for: .normal)
+        } else {
+            cameraController.flashMode = .on
+            toggleFlashButton.setBackgroundImage(UIImage(named: "flashon"), for: .normal)
+        }
+    }
+    
+    // 앨범 이미지 뷰 클릭 액션
+    @objc func showLibrary() {
+        guard let cameraView = self.storyboard?.instantiateViewController(identifier: "PhotoCollection") else {
+            return
+        }
+        self.present(cameraView, animated: true)
+    }
+    
+    // 사진촬영 이벤트 액션
+    @objc func takePicture() {
+        DispatchQueue.main.async {
+            self.cameraController.captureImage(completion: {
+                (image, error) in
+                guard let image = image else {
+                    print(error ?? "Image Capture Error")
+                    return
+                }
+                // Photokit 사용 이미지 저장
+                try? PHPhotoLibrary.shared().performChangesAndWait {
+                    PHAssetChangeRequest.creationRequestForAsset(from: image)
+                    // 앨범 뷰 이미지 수시로 교체
+                    self.albumButton.setBackgroundImage(image, for: .normal)
+                }
+            })
+        }
+    }
+    
+    // 필터 바구기 이벤트 연결
+    @objc func changeFilter() {
+        print("Get Filters")
     }
 }
-
