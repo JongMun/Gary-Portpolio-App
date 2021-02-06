@@ -27,6 +27,9 @@ class CameraPreviewController: UIViewController {
     override var prefersStatusBarHidden: Bool { return true }
     
     var imageArray = [UIImage]()
+    
+    fileprivate var filterPanel: UIView?
+    var toggleFilter: Bool = false
 }
 
 extension CameraPreviewController {
@@ -39,6 +42,8 @@ extension CameraPreviewController {
         getOnePhoto()
         configureCameraController()
         addTapGetureAction()
+        
+        createFilterView()
     }
     
     func getOnePhoto() {
@@ -60,7 +65,7 @@ extension CameraPreviewController {
             imageArray.reverse()
             
             DispatchQueue.main.async {
-                self.albumButton.setBackgroundImage(self.imageArray[0], for: .normal)
+                self.albumButton.setImage(self.imageArray[0], for: .normal)
             }
         } else {
             print("You got no photos!")
@@ -74,7 +79,7 @@ extension CameraPreviewController {
         toggleCameraButton.translatesAutoresizingMaskIntoConstraints = false
         toggleCameraButton.leftAnchor.constraint(equalTo: topPanel.leftAnchor, constant: 30).isActive = true
         toggleCameraButton.bottomAnchor.constraint(equalTo: topPanel.bottomAnchor, constant: -30).isActive = true
-        toggleCameraButton.setBackgroundImage(UIImage(named: "rotation"), for: .normal)
+        toggleCameraButton.setImage(UIImage(named: "rotation"), for: .normal)
         toggleCameraButton.imageView?.contentMode = .scaleAspectFit
         
         // 플레시 토글 버튼
@@ -82,7 +87,7 @@ extension CameraPreviewController {
         toggleFlashButton.translatesAutoresizingMaskIntoConstraints = false
         toggleFlashButton.rightAnchor.constraint(equalTo: topPanel.rightAnchor, constant: -30).isActive = true
         toggleFlashButton.bottomAnchor.constraint(equalTo: topPanel.bottomAnchor, constant: -30).isActive = true
-        toggleFlashButton.setBackgroundImage(UIImage(named: "flashon"), for: .normal)
+        toggleFlashButton.setImage(UIImage(named: "flashon"), for: .normal)
         toggleFlashButton.imageView?.contentMode = .scaleAspectFit
         
         // 사진 앨범 버튼
@@ -90,15 +95,15 @@ extension CameraPreviewController {
         albumButton.translatesAutoresizingMaskIntoConstraints = false
         albumButton.leftAnchor.constraint(equalTo: bottomPanel.leftAnchor, constant: 30).isActive = true
         albumButton.topAnchor.constraint(equalTo: bottomPanel.topAnchor, constant: 30).isActive = true
-        albumButton.setBackgroundImage(UIImage(named: "image"), for: .normal)
-        albumButton.imageView?.contentMode = .scaleAspectFit
+        albumButton.setImage(UIImage(named: "image"), for: .normal)
+        albumButton.imageView?.contentMode = .scaleAspectFill
         
         // 카메라 필터 버튼
         self.bottomPanel.addSubview(filterButton)
         filterButton.translatesAutoresizingMaskIntoConstraints = false
         filterButton.rightAnchor.constraint(equalTo: bottomPanel.rightAnchor, constant: -30).isActive = true
         filterButton.topAnchor.constraint(equalTo: bottomPanel.topAnchor, constant: 30).isActive = true
-        filterButton.setBackgroundImage(UIImage(named: "filter"), for: .normal)
+        filterButton.setImage(UIImage(named: "filter"), for: .normal)
         filterButton.imageView?.contentMode = .scaleAspectFit
         
         // 카메라 셔터 버튼
@@ -106,7 +111,7 @@ extension CameraPreviewController {
         captureButton.translatesAutoresizingMaskIntoConstraints = false
         captureButton.topAnchor.constraint(equalTo: bottomPanel.topAnchor, constant: 30).isActive = true
         captureButton.centerXAnchor.constraint(equalTo: bottomPanel.centerXAnchor).isActive = true
-        captureButton.setBackgroundImage(UIImage(named: "shutter"), for: .normal)
+        captureButton.setImage(UIImage(named: "shutter"), for: .normal)
         captureButton.imageView?.contentMode = .scaleAspectFit
     }
     
@@ -136,7 +141,7 @@ extension CameraPreviewController {
         captureButton.addTarget(self, action: #selector(takePicture), for: .touchUpInside)
         
         // 필터적용 이벤트 연결
-        filterButton.addTarget(self, action: #selector(changeFilter), for: .touchUpInside)
+        filterButton.addTarget(self, action: #selector(animateFilterView), for: .touchUpInside)
         
     }
     
@@ -162,10 +167,10 @@ extension CameraPreviewController {
     @objc func toggleFlash() {
         if cameraController.flashMode == .on {
             cameraController.flashMode = .off
-            toggleFlashButton.setBackgroundImage(UIImage(named: "flashoff"), for: .normal)
+            toggleFlashButton.setImage(UIImage(named: "flashoff"), for: .normal)
         } else {
             cameraController.flashMode = .on
-            toggleFlashButton.setBackgroundImage(UIImage(named: "flashon"), for: .normal)
+            toggleFlashButton.setImage(UIImage(named: "flashon"), for: .normal)
         }
     }
     
@@ -190,14 +195,54 @@ extension CameraPreviewController {
                 try? PHPhotoLibrary.shared().performChangesAndWait {
                     PHAssetChangeRequest.creationRequestForAsset(from: image)
                     // 앨범 뷰 이미지 수시로 교체
-                    self.albumButton.setBackgroundImage(image, for: .normal)
+                    self.albumButton.setImage(image, for: .normal)
                 }
             })
         }
     }
+}
+
+extension CameraPreviewController {
+    func createFilterView() {
+        self.filterPanel = UIView()
+        self.filterPanel?.frame.size = bottomPanel.frame.size
+        self.filterPanel?.backgroundColor = UIColor.blue
+        
+        bottomPanel.addSubview(filterPanel!)
+        
+        self.filterPanel?.translatesAutoresizingMaskIntoConstraints = false
+        self.filterPanel?.topAnchor.constraint(equalTo: bottomPanel.topAnchor, constant: 0).isActive = true
+        self.filterPanel?.bottomAnchor.constraint(equalTo: bottomPanel.bottomAnchor, constant: 0).isActive = true
+        self.filterPanel?.leftAnchor.constraint(equalTo: bottomPanel.leftAnchor, constant: 0).isActive = true
+        self.filterPanel?.rightAnchor.constraint(equalTo: bottomPanel.rightAnchor, constant: 0).isActive = true
+        
+        let downButton: UIButton = UIButton()
+        
+        filterPanel?.addSubview(downButton)
+        
+        downButton.translatesAutoresizingMaskIntoConstraints = false
+        downButton.topAnchor.constraint(equalTo: filterPanel!.topAnchor, constant: 30).isActive = true
+        downButton.rightAnchor.constraint(equalTo: filterPanel!.rightAnchor, constant: -30).isActive = true
+        downButton.widthAnchor.constraint(equalToConstant: 30).isActive = true
+        downButton.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        downButton.setBackgroundImage(UIImage(named: "arrowdown"), for: .normal)
+        downButton.addTarget(self, action: #selector(animateFilterView), for: .touchUpInside)
+    }
     
-    // 필터 바구기 이벤트 연결
-    @objc func changeFilter() {
-        print("Get Filters")
+    @objc func animateFilterView() {
+        // 필터 선택 뷰 애니메이션
+        let screenSize = UIScreen.main.bounds.size
+        
+        if self.toggleFilter {
+            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1.0, initialSpringVelocity: 1.0, options: .curveEaseInOut, animations: {
+                self.filterPanel?.frame = CGRect(x: 0, y: 200, width: screenSize.width, height: 200)
+            }, completion: nil)
+            self.toggleFilter = false
+        } else {
+            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1.0, initialSpringVelocity: 1.0, options: .curveEaseInOut, animations: {
+                self.filterPanel?.frame = CGRect(x: 0, y: 0, width: screenSize.width, height: 200)
+            }, completion: nil)
+            self.toggleFilter = true
+        }
     }
 }

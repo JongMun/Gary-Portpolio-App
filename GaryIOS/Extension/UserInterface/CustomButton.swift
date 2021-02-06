@@ -74,11 +74,11 @@ class CustomCameraButton: UIButton {
         buttonSetup()
     }
     func buttonSetup() {
-        let size:CGFloat = 30
+        let size:CGFloat = 40
         
         // Button Design
         self.setTitle("", for: .normal)
-//        self.layer.cornerRadius = size/2
+        self.layer.cornerRadius = 10
         self.layer.masksToBounds = true
         self.widthAnchor.constraint(equalToConstant: size).isActive = true
         self.heightAnchor.constraint(equalToConstant: size).isActive = true
