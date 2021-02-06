@@ -26,8 +26,6 @@ class CameraPreviewController: UIViewController {
     
     override var prefersStatusBarHidden: Bool { return true }
     
-    var imageArray = [UIImage]()
-    
     fileprivate var filterPanel: UIView?
     var toggleFilter: Bool = false
 }
@@ -47,6 +45,8 @@ extension CameraPreviewController {
     }
     
     func getOnePhoto() {
+        var imageArray = [UIImage]()
+
         let manager = PHImageManager.default()
         
         let options = PHImageRequestOptions()
@@ -59,13 +59,13 @@ extension CameraPreviewController {
             for i in 0..<fetchResult.count {
                 manager.requestImage(for: fetchResult.object(at: i), targetSize: CGSize(width: 400, height: 400), contentMode: .aspectFill, options: options) {
                     (image, error) in
-                    self.imageArray.append(image!)
+                    imageArray.append(image!)
                 }
             }
             imageArray.reverse()
             
             DispatchQueue.main.async {
-                self.albumButton.setImage(self.imageArray[0], for: .normal)
+                self.albumButton.setImage(imageArray[0], for: .normal)
             }
         } else {
             print("You got no photos!")
@@ -142,7 +142,6 @@ extension CameraPreviewController {
         
         // 필터적용 이벤트 연결
         filterButton.addTarget(self, action: #selector(animateFilterView), for: .touchUpInside)
-        
     }
     
     // 카메라 전환 이벤트 액션
@@ -205,20 +204,17 @@ extension CameraPreviewController {
 extension CameraPreviewController {
     func createFilterView() {
         self.filterPanel = UIView()
-        self.filterPanel?.frame.size = bottomPanel.frame.size
+//        self.filterPanel?.frame.size = bottomPanel.frame.size
+//        self.filterPanel?.frame = CGRect(x: 0, y: 0, width: self.bottomPanel.frame.width, height: 0)
+        self.filterPanel?.frame = CGRect(x: 0, y: 200, width: UIScreen.main.bounds.size.width, height: 0)
+
         self.filterPanel?.backgroundColor = UIColor.blue
         
         bottomPanel.addSubview(filterPanel!)
         
-        self.filterPanel?.translatesAutoresizingMaskIntoConstraints = false
-        self.filterPanel?.topAnchor.constraint(equalTo: bottomPanel.topAnchor, constant: 0).isActive = true
-        self.filterPanel?.bottomAnchor.constraint(equalTo: bottomPanel.bottomAnchor, constant: 0).isActive = true
-        self.filterPanel?.leftAnchor.constraint(equalTo: bottomPanel.leftAnchor, constant: 0).isActive = true
-        self.filterPanel?.rightAnchor.constraint(equalTo: bottomPanel.rightAnchor, constant: 0).isActive = true
-        
         let downButton: UIButton = UIButton()
         
-        filterPanel?.addSubview(downButton)
+        self.filterPanel?.addSubview(downButton)
         
         downButton.translatesAutoresizingMaskIntoConstraints = false
         downButton.topAnchor.constraint(equalTo: filterPanel!.topAnchor, constant: 30).isActive = true
@@ -231,16 +227,16 @@ extension CameraPreviewController {
     
     @objc func animateFilterView() {
         // 필터 선택 뷰 애니메이션
-        let screenSize = UIScreen.main.bounds.size
-        
         if self.toggleFilter {
+            print("1 : close")
             UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1.0, initialSpringVelocity: 1.0, options: .curveEaseInOut, animations: {
-                self.filterPanel?.frame = CGRect(x: 0, y: 200, width: screenSize.width, height: 200)
+                self.filterPanel?.frame = CGRect(x: 0, y: 200, width: self.bottomPanel.frame.width, height: self.bottomPanel.frame.height)
             }, completion: nil)
             self.toggleFilter = false
         } else {
+            print("2 : open")
             UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1.0, initialSpringVelocity: 1.0, options: .curveEaseInOut, animations: {
-                self.filterPanel?.frame = CGRect(x: 0, y: 0, width: screenSize.width, height: 200)
+                self.filterPanel?.frame = CGRect(x: 0, y: 0, width: self.bottomPanel.frame.width, height: self.bottomPanel.frame.height)
             }, completion: nil)
             self.toggleFilter = true
         }
