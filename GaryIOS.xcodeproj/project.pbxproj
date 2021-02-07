@@ -21,6 +21,7 @@
 		FF6891B925C86E6900037C4E /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6891B825C86E6900037C4E /* CustomTextField.swift */; };
 		FF6891BF25C91B2E00037C4E /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6891BE25C91B2E00037C4E /* SignInViewController.swift */; };
 		FF6891C425C91C7B00037C4E /* PermissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6891C325C91C7B00037C4E /* PermissionViewController.swift */; };
+		FF94A0EA25CEE513007D5CD2 /* FilterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF94A0E925CEE513007D5CD2 /* FilterCollectionViewCell.swift */; };
 		FFAD24D225CBAE860090D3C1 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAD24D125CBAE860090D3C1 /* Filter.swift */; };
 		FFAD24D725CBAF280090D3C1 /* CameraEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAD24D625CBAF280090D3C1 /* CameraEnum.swift */; };
 		FFAD24DB25CBAFC70090D3C1 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAD24DA25CBAFC70090D3C1 /* Color.swift */; };
@@ -51,6 +52,7 @@
 		FF6891B825C86E6900037C4E /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		FF6891BE25C91B2E00037C4E /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		FF6891C325C91C7B00037C4E /* PermissionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionViewController.swift; sourceTree = "<group>"; };
+		FF94A0E925CEE513007D5CD2 /* FilterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCollectionViewCell.swift; sourceTree = "<group>"; };
 		FFAD24D125CBAE860090D3C1 /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
 		FFAD24D625CBAF280090D3C1 /* CameraEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraEnum.swift; sourceTree = "<group>"; };
 		FFAD24DA25CBAFC70090D3C1 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
@@ -247,6 +249,7 @@
 				FFAD24F025CBB85D0090D3C1 /* CameraPreviewController.swift */,
 				FFD8195725CA888000D9ECD3 /* CameraController.swift */,
 				FFAD24DF25CBB3000090D3C1 /* PhotoCollectionViewController.swift */,
+				FF94A0E925CEE513007D5CD2 /* FilterCollectionViewCell.swift */,
 			);
 			path = Camera;
 			sourceTree = "<group>";
@@ -375,6 +378,7 @@
 				FFAD24DB25CBAFC70090D3C1 /* Color.swift in Sources */,
 				FFD8192225C97F3700D9ECD3 /* SignUpViewController.swift in Sources */,
 				FFAD24D225CBAE860090D3C1 /* Filter.swift in Sources */,
+				FF94A0EA25CEE513007D5CD2 /* FilterCollectionViewCell.swift in Sources */,
 				FF6891B925C86E6900037C4E /* CustomTextField.swift in Sources */,
 				FFD8191F25C97F2200D9ECD3 /* PWSearchViewController.swift in Sources */,
 				FF68919A25C867B100037C4E /* CustomButton.swift in Sources */,

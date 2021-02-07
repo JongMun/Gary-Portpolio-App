@@ -8,7 +8,32 @@
 import Foundation
 import CoreImage
 
-enum FilterAdjustColor: String {
+enum FilterColorEffect: String, CaseIterable {
+    case CIColorCrossPolynomial = "CIColorCrossPolynomial"
+    case CIColorCube = "CIColorCube"
+    case CIColorCubeWithColorSpace = "CIColorCubeWithColorSpace"
+    case CIColorInvert = "CIColorInvert"
+    case CIColorMap = "CIColorMap"
+    case CIColorMonochrome = "CIColorMonochrome"
+    case CIColorPosterize = "CIColorPosterize"
+    case CIFalseColor = "CIFalseColor"
+    case CIMaskToAlpha = "CIMaskToAlpha"
+    case CIMaximumComponent = "CIMaximumComponent"
+    case CIMinimumComponent = "CIMinimumComponent"
+    case CIPhotoEffectChrome = "CIPhotoEffectChrome"
+    case CIPhotoEffectFade = "CIPhotoEffectFade"
+    case CIPhotoEffectInstant = "CIPhotoEffectInstant"
+    case CIPhotoEffectMono = "CIPhotoEffectMono"
+    case CIPhotoEffectNoir = "CIPhotoEffectNoir"
+    case CIPhotoEffectProcess = "CIPhotoEffectProcess"
+    case CIPhotoEffectTonal = "CIPhotoEffectTonal"
+    case CIPhotoEffectTransfer = "CIPhotoEffectTransfer"
+    case CISepiaTone = "CISepiaTone"
+    case CIVignette = "CIVignette"
+    case CIVignetteEffect = "CIVignetteEffect"
+}
+	
+enum FilterAdjustColor: CaseIterable {
     case CIColorClamp
     case CIColorControls
     case CIColorMatrix
@@ -24,32 +49,7 @@ enum FilterAdjustColor: String {
     case CIWhitePointAdjust
 }
 
-enum FilterColorEffect: String {
-    case CIColorCrossPolynomial
-    case CIColorCube
-    case CIColorCubeWithColorSpace
-    case CIColorInvert
-    case CIColorMap
-    case CIColorMonochrome
-    case CIColorPosterize
-    case CIFalseColor
-    case CIMaskToAlpha
-    case CIMaximumComponent
-    case CIMinimumComponent
-    case CIPhotoEffectChrome
-    case CIPhotoEffectFade
-    case CIPhotoEffectInstant
-    case CIPhotoEffectMono
-    case CIPhotoEffectNoir
-    case CIPhotoEffectProcess
-    case CIPhotoEffectTonal
-    case CIPhotoEffectTransfer
-    case CISepiaTone
-    case CIVignette
-    case CIVignetteEffect
-}
-
-enum FilterStylize: String {
+enum FilterStylize: CaseIterable {
     case CIBlendWithAlphaMask
     case CIBlendWithMask
     case CIBloom

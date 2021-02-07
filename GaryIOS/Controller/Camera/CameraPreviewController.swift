@@ -10,31 +10,36 @@ import Photos
 import AVFoundation
 
 class CameraPreviewController: UIViewController {
+    // Camera Controller
     let cameraController = CameraController()
     let imageController = UIImagePickerController()
     
+    // User Interface View
     @IBOutlet fileprivate var topPanel: UIView!
     @IBOutlet fileprivate var bottomPanel: UIView!
     @IBOutlet fileprivate var previewView: UIView!
     @IBOutlet fileprivate var albumImage: UIImageView?
     
+    // User Interface Function
     let toggleCameraButton: CustomCameraButton = CustomCameraButton()
     let toggleFlashButton: CustomCameraButton = CustomCameraButton()
     let albumButton: CustomCameraButton = CustomCameraButton()
     let filterButton: CustomCameraButton = CustomCameraButton()
     let captureButton: CustomCameraShutterButton = CustomCameraShutterButton()
     
-    override var prefersStatusBarHidden: Bool { return true }
-    
+    // Prepare Filtering Panel
     fileprivate var filterPanel: UIView?
+    fileprivate var collectionView: UICollectionView?
+    private let filterArray = Array(FilterColorEffect.allCases)
+
+    // Camera Switching Toggle Value
     var toggleFilter: Bool = false
 }
 
 extension CameraPreviewController {
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    
         functionButtonInit()
         
         getOnePhoto()
@@ -42,6 +47,10 @@ extension CameraPreviewController {
         addTapGetureAction()
         
         createFilterView()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
     }
     
     func getOnePhoto() {
@@ -201,36 +210,81 @@ extension CameraPreviewController {
     }
 }
 
-extension CameraPreviewController {
+extension CameraPreviewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func createFilterView() {
-        self.filterPanel = UIView()
-//        self.filterPanel?.frame.size = bottomPanel.frame.size
-//        self.filterPanel?.frame = CGRect(x: 0, y: 0, width: self.bottomPanel.frame.width, height: 0)
-        self.filterPanel?.frame = CGRect(x: 0, y: 200, width: UIScreen.main.bounds.size.width, height: 0)
+        filterPanel = UIView(frame: CGRect(x: 0,
+                                           y: bottomPanel.frame.height,
+                                           width: bottomPanel.frame.width,
+                                           height: bottomPanel.frame.height))
+        
+        guard let subView = filterPanel else {
+            return
+        }
+        subView.backgroundColor = .white
+        bottomPanel.addSubview(subView)
+        
+        // Filter Collection View Hiding Button
+        let downButton: UIButton = UIButton(frame: CGRect(x: 10,
+                                                          y: 10,
+                                                          width: 30,
+                                                          height: 30))
+        subView.addSubview(downButton)
 
-        self.filterPanel?.backgroundColor = UIColor.blue
-        
-        bottomPanel.addSubview(filterPanel!)
-        
-        let downButton: UIButton = UIButton()
-        
-        self.filterPanel?.addSubview(downButton)
-        
-        downButton.translatesAutoresizingMaskIntoConstraints = false
-        downButton.topAnchor.constraint(equalTo: filterPanel!.topAnchor, constant: 30).isActive = true
-        downButton.rightAnchor.constraint(equalTo: filterPanel!.rightAnchor, constant: -30).isActive = true
-        downButton.widthAnchor.constraint(equalToConstant: 30).isActive = true
-        downButton.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        downButton.translatesAutoresizingMaskIntoConstraints = true
         downButton.setBackgroundImage(UIImage(named: "arrowdown"), for: .normal)
         downButton.addTarget(self, action: #selector(animateFilterView), for: .touchUpInside)
+
+        // Set Collection View for Image Filter
+        let layout = UICollectionViewFlowLayout()
+        
+        layout.scrollDirection = .horizontal
+        layout.minimumLineSpacing = 5
+        layout.minimumInteritemSpacing = 1
+        layout.itemSize = CGSize(width: 80,
+                                 height: subView.frame.height - 20)
+        
+        self.collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+
+        guard let collectionView = collectionView else {
+            return
+        }
+        subView.addSubview(collectionView)
+        
+        collectionView.frame = CGRect(x: 50,
+                                      y: 10,
+                                      width: subView.frame.width - 100,
+                                      height: subView.frame.height)
+        collectionView.backgroundColor = .white
+        collectionView.register(FilterCollectionViewCell.self, forCellWithReuseIdentifier: FilterCollectionViewCell.identifier)
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        
+        collectionView.translatesAutoresizingMaskIntoConstraints = true
+        collectionView.topAnchor.constraint(equalTo: subView.topAnchor, constant: 20).isActive = true
+        collectionView.leftAnchor.constraint(equalTo: downButton.rightAnchor, constant: 10).isActive = true
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return filterArray.count
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FilterCollectionViewCell.identifier, for: indexPath) as! FilterCollectionViewCell
+        cell.configure(label: "#filter \(indexPath.row)", index: indexPath.row)
+//        print("Filter Names: \(filterArray[indexPath.row])")
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("Item is \(getFilterNames(indexPath.row))")
     }
     
     @objc func animateFilterView() {
-        // 필터 선택 뷰 애니메이션
+        // 필터 뷰 애니메이션
         if self.toggleFilter {
             print("1 : close")
             UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1.0, initialSpringVelocity: 1.0, options: .curveEaseInOut, animations: {
-                self.filterPanel?.frame = CGRect(x: 0, y: 200, width: self.bottomPanel.frame.width, height: self.bottomPanel.frame.height)
+                self.filterPanel?.frame = CGRect(x: 0, y: self.bottomPanel.frame.height, width: self.bottomPanel.frame.width, height: self.bottomPanel.frame.height)
             }, completion: nil)
             self.toggleFilter = false
         } else {
@@ -240,5 +294,9 @@ extension CameraPreviewController {
             }, completion: nil)
             self.toggleFilter = true
         }
+    }
+    
+    func getFilterNames(_ index: Int) -> String{
+        return filterArray[index].rawValue
     }
 }
